@@ -7,7 +7,7 @@ const readFileAsync = util.promisify(fs.readFile);
 
 /**
  * Les gögn async úr JSON skrá
- * 
+ *
  * @returns { object } Gögn úr JSON skrá
  */
 async function readVid() {
@@ -18,7 +18,7 @@ async function readVid() {
 
 /**
  * Route handler sem birtir lista af myndböndum
- * 
+ *
  * @param { object } req  Request hlutur
  * @param { object } res   Response hlutur
  */
@@ -31,7 +31,7 @@ async function listVid(req, res) {
 
 /**
  * Fall sem umlykur async middleware með villumeðhöndlun.
- * 
+ *
  * @param { function } fn Middleware sem grípa á villur fyrir
  * @returns { function } Middleware með villumeðhöndlun
  */
@@ -42,7 +42,7 @@ function catchErrors(fn) {
 /**
  * Route handler sem birtir myndband og ef það finnst ekki er
  * kallað í next, sem endar á 404 handler.
- * 
+ *
  * @param { object } req  Request hlutur
  * @param { object } res  Response hlutur
  * @param { function } next  Næsta middleware
@@ -52,7 +52,7 @@ async function video(req, res, next) {
   const { id } = req.params;
   const { videos } = json;
   const foundVideo = videos.find((a) => a.id == id);    //eslint-disable-line
-      //type-casting þarf að geta átt sér stað í þessum samanburði því id er int, ekki string
+  // type-casting þarf að geta átt sér stað í þessum samanburði því id er int, ekki string
   if (!foundVideo) {
     return next();
   }

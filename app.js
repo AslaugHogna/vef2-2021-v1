@@ -20,7 +20,7 @@ app.use('/', router);
 
 /**
  * Fall sem sér um 404 villur (middleware)
- * 
+ *
  * @param { object } req Request hlutur
  * @param { object } res  Response hlutur
  * @param { function } next  Næsta middleware
@@ -32,7 +32,7 @@ function fannstEkkiHandler(req, res, next) {    //eslint-disable-line
 }
 /**
  * Fall sem sér um 500 villur (middleware)
- * 
+ *
  * @param { object } err  Villa sem kom upp
  * @param { object } req  Request hlutur
  * @param { object } res  Response hlutur
