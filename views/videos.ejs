@@ -1,0 +1,47 @@
+<%- include('header') -%>
+
+  <header>
+    <div class="grid">
+      <div class="row">
+        <div class="col col-10 offset-col-1 midja">
+          <h1>Fræðslumynd&shy;bandaleigan</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <% categories.forEach((category) => { %>
+      <div class="grid">
+        <div class="row">
+          <div class="col">
+            <h2><%= category.title %></h2>
+          </div>
+        </div>
+        <div class="row">
+          <% category.videos.forEach((i) => { %>
+            <div class="col col-4 col-md-6 col-sm-12">
+              <a class="video" href="/<%= videos[i - 1].id %>" >
+                <div class="video-card">
+                  <div class="image-wrapper">
+                    <img src="<%= videos[i - 1].poster%>" alt: "Myndband: <%= videos[i - 1].title %>">
+                    <time class="duration">
+                      <%= formatTime(videos[i - 1].duration) %>
+                    </time>
+                  </div>
+                  <h3><%= videos[i - 1].title %></h3>
+                  <p class="created">Fyrir <%= formatDate(videos[i - 1].created) %> síðan</p>
+                </div>
+              </a>
+            </div>
+          <% }) %>
+        </div>
+        <div class="row">
+          <div class="col lina"> 
+          </div>
+        </div>
+
+      </div>
+    <% }) %>
+  </main>
+
+<%- include('footer') -%>

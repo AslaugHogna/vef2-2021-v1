@@ -1,0 +1,38 @@
+video {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.midja {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.texti {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 1rem 0 2rem;
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 2rem;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.duration {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 1rem;
+  color: $white;
+  padding: 5px;
+  position: absolute;
+  right: 0.5rem;
+}

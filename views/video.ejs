@@ -1,0 +1,31 @@
+<%- include('header') -%>
+
+  <header>
+    <div class="grid">
+      <div class="row">
+        <div class="col col-10 offset-col-1 midja">
+          <h1><%= video.title %></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="grid">
+      <div class="row">
+        <div class="col col-12">
+          <video controls class="my-video" width="800" height="600">
+            <source src="<%=video.video%>" type="video/mp4">
+              Sorry, your browser doesn't support embedded videos.
+          </video>
+        </div>
+        <div class="col col-12 texti">
+          <%= video.description %>
+        </div>
+        <div class="col bottom">
+          <a href="/">Til baka</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<%- include('footer') -%>
